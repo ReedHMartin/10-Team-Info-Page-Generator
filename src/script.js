@@ -10,3 +10,9 @@
  * 
  * 3. Complete -> Build an HTML document. In the center, loop over every entry in employeeStack and call .renderCard()
  */
+
+var employeeStack = [];
+
+/** TODO: Use "Inquirer" to push 1 manager and multiple Engineers and/or Interns to employeeStack */
+
+
