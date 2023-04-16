@@ -11,24 +11,35 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
-// TODO: Create an array to store the team members
+// Create an array to store the team members
 let teamMembers = [];
 
-// TODO: Create a function to initialize the application
+// Create a function to initialize the application
 function init() {
-  // TODO: Call the function to prompt for the manager's information
+  // Call the function to prompt for the manager's information
   promptManager();
 }
 
-// TODO: Call the init() function to start the application
+// Call the init() function to start the application
 init();
 
-// TODO: Create a function to render the  HTML cards for each team member
+// Create a function to render the HTML cards for each team member
 function renderEmployeeCard(teamMember) {
-    // TODO: Call the method or function to generate the HTML card based on role
-  
-    // TODO: Return the generated HTML card as a string
+  // Check the role of the team member to determine which type of card to generate
+  if (teamMember instanceof Manager) {
+    // If the team member is a manager, generate a manager card
+    return generateManagerCard(teamMember);
+  } else if (teamMember instanceof Engineer) {
+    // If the team member is an engineer, generate an engineer card
+    return generateEngineerCard(teamMember);
+  } else if (teamMember instanceof Intern) {
+    // If the team member is an intern, generate an intern card
+    return generateInternCard(teamMember);
+  } else {
+    // If the team member is not a manager, engineer, or intern, throw an error
+    throw new Error('Invalid team member type');
   }
+}
 
   // TODO: Create function to generate the final HTML output
 function generateHTML(teamMembers) {
