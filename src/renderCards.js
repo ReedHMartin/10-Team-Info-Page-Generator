@@ -1,7 +1,15 @@
 // Function to render an employee card based on their role
 function renderEmployeeCard(employee) {
 
-  // TODO: Add statement to check employee role
+  // Check the employee's role and add additional information to the rendered card based on the role
+  let roleSpecificHTML = "";
+  if (employee.getRole() === "Manager") {
+    roleSpecificHTML = `<li class="list-group-item">Office Number: ${employee.getOfficeNumber()}</li>`;
+  } else if (employee.getRole() === "Engineer") {
+    roleSpecificHTML = `<li class="list-group-item">Github: <a href="https://github.com/${employee.getGithub()}" target="_blank">${employee.getGithub()}</a></li>`;
+  } else if (employee.getRole() === "Intern") {
+    roleSpecificHTML = `<li class="list-group-item">School: ${employee.getSchool()}</li>`;
+  }
 
     // Creates HTML code for the employee card
     // TODO: Add clickable employee email to the rendered card.
@@ -14,7 +22,7 @@ function renderEmployeeCard(employee) {
           <ul class="list-group">          
             <li class="list-group-item">ID: ${employee.getId()}</li>
             card.
-            <li class="list-group-item">Email: ${employee.getEmail()}</li>            
+            <li class="list-group-item">Email: <a href="mailto:${employee.getEmail()}">${employee.getEmail()}</a></li>         
           </ul>
         </div>
       </div>
