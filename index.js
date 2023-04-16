@@ -30,6 +30,31 @@ async function addTeamMember() {
     return;
   }
 
+ // Initialize an empty array to store specific questions based on the team member's role
+let specificQuestions = [];
+
+// Check if the role is 'Engineer'
+if (role === 'Engineer') {
+  // If the role is 'Engineer', set specificQuestions to contain a question asking for the engineer's GitHub username
+  specificQuestions = [
+    {
+      type: 'input',
+      name: 'github',
+      message: 'What is the engineer\'s GitHub username?',
+    },
+  ];
+} else {
+  // If the role is not 'Engineer' (in this case, it must be 'Intern'), set specificQuestions to contain a question asking for the intern's school
+  specificQuestions = [
+    {
+      type: 'input',
+      name: 'school',
+      message: 'What is the intern\'s school?',
+    },
+  ];
+}
+
+
 
 async function main() {
     // Prompt user for manager information
@@ -62,13 +87,7 @@ async function main() {
     // Create a new Manager object and add it to the teamMembers array
     const manager = new Manager(managerAnswers.name, managerAnswers.id, managerAnswers.email, managerAnswers.officeNumber);
     teamMembers.push(manager);
-  
-    // Prompt user to add engineers, interns or finish building the team
-    // TODO: Add inquirer prompts to choose the next action
-  
-    // Loop through adding engineers/interns until the user chooses to finish building the team
-    // TODO: Add logic to handle user choices and add team members accordingly
-  
+      
     // Generate HTML cards for each team member
     const teamCardsHTML = teamMembers.map(renderEmployeeCard).join('');
   
