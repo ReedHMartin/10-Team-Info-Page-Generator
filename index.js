@@ -9,8 +9,6 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const renderEmployeeCard = require('./src/renderCards');
 const renderPage = require('./src/renderPage');
-const finalHTML = renderPage(teamCardsHTML);
-
 
 // Placeholder array to store team members
 const teamMembers = [];
