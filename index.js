@@ -40,6 +40,9 @@ async function main() {
         message: 'What is the manager\'s office number?',
       },
     ];
+
+    const managerAnswers = await inquirer.prompt(managerQuestions);
+}
   
     // Create a new Manager object and add it to the teamMembers array
     const manager = new Manager(/* manager details */);
