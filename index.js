@@ -83,11 +83,9 @@ if (role === 'Engineer') {
   teamMembers.push(new Intern(answers.name, answers.id, answers.email, answers.school));
 }
 
-
-
-
-
-
+// Continue adding team members
+await addTeamMember();
+}
 
 async function main() {
     // Prompt user for manager information
@@ -115,12 +113,14 @@ async function main() {
     ];
 
     const managerAnswers = await inquirer.prompt(managerQuestions);
-}
   
     // Create a new Manager object and add it to the teamMembers array
     const manager = new Manager(managerAnswers.name, managerAnswers.id, managerAnswers.email, managerAnswers.officeNumber);
     teamMembers.push(manager);
-      
+
+    // Add engineers, interns, or finish building the team
+    await addTeamMember();
+
     // Generate HTML cards for each team member
     const teamCardsHTML = teamMembers.map(renderEmployeeCard).join('');
   
