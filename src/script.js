@@ -22,3 +22,20 @@ function init() {
 
 // TODO: Call the init() function to start the application
 init();
+
+// TODO: Create a function to render the  HTML cards for each team member
+function renderEmployeeCard(teamMember) {
+    // TODO: Call the method or function to generate the HTML card based on role
+  
+    // TODO: Return the generated HTML card as a string
+  }
+
+  // TODO: Create function to generate the final HTML output
+function generateHTML(teamMembers) {
+    // TODO: Use renderEmployeeCard function to generate HTML cards for each team member
+    // and join them into a single string
+  
+    // TODO: Combine rendered HTML cards with an HTML template to create the final HTML output
+  
+    // TODO: Return the final HTML output as a string
+  }
