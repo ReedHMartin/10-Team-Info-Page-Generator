@@ -54,7 +54,24 @@ if (role === 'Engineer') {
   ];
 }
 
-
+// Define an array of common questions for all roles (Manager, Engineer, and Intern)
+const commonQuestions = [
+  {
+    type: 'input',
+    name: 'name',
+    message: `What is the ${role.toLowerCase()}'s name?`,
+  },
+  {
+    type: 'input',
+    name: 'id',
+    message: `What is the ${role.toLowerCase()}'s ID?`,
+  },
+  {
+    type: 'input',
+    name: 'email',
+    message: `What is the ${role.toLowerCase()}'s email?`,
+  },
+];
 
 async function main() {
     // Prompt user for manager information
