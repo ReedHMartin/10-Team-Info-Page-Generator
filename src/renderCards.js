@@ -12,8 +12,6 @@ function renderEmployeeCard(employee) {
   }
 
     // Creates HTML code for the employee card
-    // TODO: Add clickable employee email to the rendered card.
-    // TODO: Add additional employee information to the rendered card based on employee role.
     const CardHTML = `
       <div class="card text-bg-primary m-2" style="width: 18rem;">
         <div class="card-body">
