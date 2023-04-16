@@ -7,11 +7,13 @@ const path = require('path');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const renderEmployeeCard = require('./src/renderCards');
+const renderEmployeeCard = require('./src/renderEmployeeCard');
 const renderPage = require('./src/renderPage');
 
 // Placeholder array to store team members
 const teamMembers = [];
+
+
 
 // Function to add a new team member
 async function addTeamMember() {
@@ -122,7 +124,6 @@ async function main() {
     await addTeamMember();
 
     // Generate HTML cards for each team member
-    const html = renderPage(teamMembers);
     const teamCardsHTML = teamMembers.map(renderEmployeeCard).join('');
   
     // Generate the final HTML file with teamCardsHTML

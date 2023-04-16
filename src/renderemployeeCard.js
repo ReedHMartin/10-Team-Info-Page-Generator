@@ -1,5 +1,5 @@
 // Function to render an employee card based on their role
-function renderEmployeeCard(employee) {
+function renderCard(employee) {
 
   // Check the employee's role and add additional information to the rendered card based on the role
   let roleSpecificHTML = "";
@@ -30,6 +30,6 @@ function renderEmployeeCard(employee) {
     return CardHTML;
   }
 
-  // Exports the renderEmployeeCard function
-  module.exports = renderEmployeeCard;
+  // Exports the renderCard function
+  module.exports = renderCard;
   
