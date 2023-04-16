@@ -23,3 +23,5 @@ function renderPage(teamMembers) {
     // Returns the entire HTML page as a string
     return pageHTML;
 }
+
+module.exports = renderPage;
