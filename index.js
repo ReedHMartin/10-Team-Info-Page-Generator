@@ -73,6 +73,17 @@ const commonQuestions = [
   },
 ];
 
+// Prompt the user to answer the common and role-specific questions
+const answers = await inquirer.prompt([...commonQuestions, ...specificQuestions]);
+
+
+
+
+
+
+
+
+
 async function main() {
     // Prompt user for manager information
     const managerQuestions = [
