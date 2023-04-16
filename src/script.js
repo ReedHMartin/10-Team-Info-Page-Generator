@@ -83,13 +83,27 @@ function saveHTML(html) {
   console.log('The team HTML file has been saved to the "dist" folder.');
 }
 
-  // TODO: Update the function for prompting to add more team members or finish building the team
-function promptAddTeamMember() {
-    // TODO: Use Inquirer to prompt the user to add an engineer, an intern, or finish building the team
-  
-    // TODO: Based on the user's choice, call the appropriate function (promptEngineer, promptIntern, or generate the final HTML output)
-  
-    // TODO: If the user decides to finish building the team, call the generateHTML function to create the final HTML output
+// Update the function for prompting to add more team members or finish building the team
+async function promptAddTeamMember() {
+  // Prompt the user to choose whether to add an engineer, an intern, or finish building the team
+  const { choice } = await inquirer.prompt([
+    {
+      type: 'list',
+      name: 'choice',
+      message: 'Do you want to add an Engineer, an Intern or finish building your team?',
+      choices: ['Engineer', 'Intern', 'Finish building my team'],
+    },
+  ]);
 
-    // TODO: Call the saveHTML function to save the output to to dist folder
+  // Check the user's choice and call the appropriate function
+  if (choice === 'Engineer') {
+    await promptEngineer();
+  } else if (choice === 'Intern') {
+    await promptIntern();
+  } else {
+    // If the user chooses to finish building the team, call the generateHTML function
+    const html = generateHTML(teamMembers);
+    // Call the saveHTML function to save the output to the dist folder
+    saveHTML(html);
   }
+}
