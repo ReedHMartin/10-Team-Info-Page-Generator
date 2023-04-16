@@ -18,7 +18,28 @@ const teamMembers = [];
 // Main function to start the application
 async function main() {
     // Prompt user for manager information
-    // TODO: Add inquirer prompts for manager details
+    const managerQuestions = [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'What is the manager\'s name?',
+      },
+      {
+        type: 'input',
+        name: 'id',
+        message: 'What is the manager\'s ID?',
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: 'What is the manager\'s email?',
+      },
+      {
+        type: 'input',
+        name: 'officeNumber',
+        message: 'What is the manager\'s office number?',
+      },
+    ];
   
     // Create a new Manager object and add it to the teamMembers array
     const manager = new Manager(/* manager details */);
