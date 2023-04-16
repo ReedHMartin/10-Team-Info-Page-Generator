@@ -13,7 +13,24 @@ const renderPage = require('./src/renderPage');
 // Placeholder array to store team members
 const teamMembers = [];
 
-// Main function to start the application
+// Function to add a new team member
+async function addTeamMember() {
+  const teamMemberOptions = [
+    {
+      type: 'list',
+      name: 'role',
+      message: 'What type of team member would you like to add?',
+      choices: ['Engineer', 'Intern', 'Finish building my team'],
+    },
+  ];
+
+  const { role } = await inquirer.prompt(teamMemberOptions);
+
+  if (role === 'Finish building my team') {
+    return;
+  }
+
+
 async function main() {
     // Prompt user for manager information
     const managerQuestions = [
