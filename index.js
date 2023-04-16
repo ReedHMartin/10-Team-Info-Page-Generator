@@ -45,7 +45,7 @@ async function main() {
 }
   
     // Create a new Manager object and add it to the teamMembers array
-    const manager = new Manager(/* manager details */);
+    const manager = new Manager(managerAnswers.name, managerAnswers.id, managerAnswers.email, managerAnswers.officeNumber);
     teamMembers.push(manager);
   
     // Prompt user to add engineers, interns or finish building the team
@@ -58,7 +58,7 @@ async function main() {
     const teamCardsHTML = teamMembers.map(renderEmployeeCard).join('');
   
     // Generate the final HTML file with teamCardsHTML
-    // TODO: Add a function to generate the final HTML file
+    const finalHTML = renderPage(teamCardsHTML);
   
     // Write the HTML file to the 'dist' directory
     fs.writeFileSync(path.join(__dirname, 'dist', 'team.html'), finalHTML);
