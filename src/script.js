@@ -74,13 +74,15 @@ function generateHTML(teamMembers) {
 }
 
 
-  // TODO: Create a function to save the generated HTML to a file in the dist folder
+// Create function to save the generated HTML to a file in the dist folder
 function saveHTML(html) {
-    // TODO: Use the fs module to write the final HTML output to a file in the dist folder
-  
-    // TODO: Log a message to the console indicating that the file has been saved successfully
-  }
-  
+  // Use the fs module to write the final HTML output to a file in the dist folder
+  fs.writeFileSync(path.join(__dirname, 'dist', 'team.html'), html);
+
+  // Log a message to the console indicating that the file has been saved successfully
+  console.log('The team HTML file has been saved to the "dist" folder.');
+}
+
   // TODO: Update the function for prompting to add more team members or finish building the team
 function promptAddTeamMember() {
     // TODO: Use Inquirer to prompt the user to add an engineer, an intern, or finish building the team
