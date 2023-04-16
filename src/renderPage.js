@@ -1,3 +1,6 @@
+// Import the renderEmployeeCard function
+const renderEmployeeCard = require('./renderEmployeeCard');
+
 // Function to render the entire HTML page with team members' information
 function renderPage(teamMembers) {
     // HTML code for the entire page

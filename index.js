@@ -122,6 +122,7 @@ async function main() {
     await addTeamMember();
 
     // Generate HTML cards for each team member
+    const html = renderPage(teamMembers);
     const teamCardsHTML = teamMembers.map(renderEmployeeCard).join('');
   
     // Generate the final HTML file with teamCardsHTML
