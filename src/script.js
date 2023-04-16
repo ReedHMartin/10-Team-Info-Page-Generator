@@ -39,3 +39,21 @@ function generateHTML(teamMembers) {
   
     // TODO: Return the final HTML output as a string
   }
+
+  // TODO: Create a function to save the generated HTML to a file in the dist folder
+function saveHTML(html) {
+    // TODO: Use the fs module to write the final HTML output to a file in the dist folder
+  
+    // TODO: Log a message to the console indicating that the file has been saved successfully
+  }
+  
+  // TODO: Update the function for prompting to add more team members or finish building the team
+function promptAddTeamMember() {
+    // TODO: Use Inquirer to prompt the user to add an engineer, an intern, or finish building the team
+  
+    // TODO: Based on the user's choice, call the appropriate function (promptEngineer, promptIntern, or generate the final HTML output)
+  
+    // TODO: If the user decides to finish building the team, call the generateHTML function to create the final HTML output
+
+    // TODO: Call the saveHTML function to save the output to to dist folder
+  }
