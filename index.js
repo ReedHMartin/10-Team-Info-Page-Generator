@@ -76,7 +76,12 @@ const commonQuestions = [
 // Prompt the user to answer the common and role-specific questions
 const answers = await inquirer.prompt([...commonQuestions, ...specificQuestions]);
 
-
+// Create a new Engineer or Intern object and add it to the teamMembers array
+if (role === 'Engineer') {
+  teamMembers.push(new Engineer(answers.name, answers.id, answers.email, answers.github));
+} else {
+  teamMembers.push(new Intern(answers.name, answers.id, answers.email, answers.school));
+}
 
 
 
