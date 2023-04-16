@@ -41,15 +41,38 @@ function renderEmployeeCard(teamMember) {
   }
 }
 
-  // TODO: Create function to generate the final HTML output
+// Create function to generate the final HTML output
 function generateHTML(teamMembers) {
-    // TODO: Use renderEmployeeCard function to generate HTML cards for each team member
-    // and join them into a single string
+  // Use map() function to call the renderEmployeeCard() function for each team member and return an array of HTML card strings
+  const renderedCards = teamMembers.map((teamMember) => renderEmployeeCard(teamMember));
   
-    // TODO: Combine rendered HTML cards with an HTML template to create the final HTML output
+  // Join the array of HTML card strings into a single string
+  const renderedCardsString = renderedCards.join('');
   
-    // TODO: Return the final HTML output as a string
-  }
+  // Create an HTML template string with placeholders for the rendered HTML cards
+  const htmlTemplate = `
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Profile Generator</title>
+  </head>
+  <body>
+    <header>
+      <h1>My Team</h1>
+    </header>
+    <main>
+      ${renderedCardsString}
+    </main>
+  </body>
+  </html>
+  `;
+
+  // Return the final HTML output as a string
+  return htmlTemplate;
+}
+
 
   // TODO: Create a function to save the generated HTML to a file in the dist folder
 function saveHTML(html) {
